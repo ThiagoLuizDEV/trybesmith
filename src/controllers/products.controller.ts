@@ -8,6 +8,12 @@ const newProduct = async (req: Request, res: Response) => {
   return res.status(201).json(resultProducts);
 };
 
+async function getAll(req: Request, res: Response) {
+  const result = await productsService.getAll();
+  return res.status(200).json(result);
+}
+
 export default {
   newProduct,
+  getAll,
 };
