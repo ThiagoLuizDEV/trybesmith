@@ -3,7 +3,7 @@ import usersService from '../services/users.service';
 import { Users } from '../interface/user.interface';
 import generateToken from '../utils/auth';
 
-const insertUser = async (req: Request, res: Response) => {
+const newUser = async (req: Request, res: Response) => {
   const users: Users = req.body;
   const result = await usersService.newUser(users);
   const resultToken = generateToken(result);
@@ -11,5 +11,5 @@ const insertUser = async (req: Request, res: Response) => {
 };
   
 export default {
-  insertUser,
+  newUser,
 };
